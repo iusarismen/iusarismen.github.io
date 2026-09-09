@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>魔界天使-暗黑幻想题材作品与角色设定百科</title>
+    <meta name="description" content="魔界天使是融合天使与恶魔元素的暗黑幻想主题，本站提供相关作品介绍、角色设定、世界观解析、同人创作与常见问题解答，带你走进堕落与救赎交织的魔界天使世界。">
+    <meta name="keywords" content="魔界天使,暗黑幻想,天使恶魔,角色设定,同人创作,魔界天使作品,堕落天使">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Segoe UI', Roboto, sans-serif;
+            background: #0d0a14;
+            color: #e3d9f2;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        a {
+            color: #c9a6e8;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #ff7ac6;
+        }
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        /* ---- 页眉 ---- */
+        .site-header {
+            background: linear-gradient(145deg, #160d1f 0%, #1e1026 100%);
+            border-bottom: 1px solid rgba(255, 122, 198, 0.15);
+            padding: 18px 0;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            backdrop-filter: blur(8px);
+        }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #ff7ac6 0%, #6a3e9f 100%);
+            font-size: 24px;
+            box-shadow: 0 0 20px rgba(255, 122, 198, 0.4);
+        }
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            background: linear-gradient(90deg, #f5c8e0, #c9a6e8, #ff9de2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .logo-text small {
+            font-size: 0.7rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            color: #8f7ba8;
+            -webkit-text-fill-color: #8f7ba8;
+            margin-left: 6px;
+        }
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+        .main-nav a {
+            font-size: 0.95rem;
+            padding: 6px 2px;
+            position: relative;
+        }
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #ff7ac6, #b06ae0);
+            transition: width 0.3s;
+        }
+        .main-nav a:hover::after,
+        .main-nav a.active::after {
+            width: 100%;
+        }
+        .main-nav a.active {
+            color: #ff9de2;
+        }
+        .header-search {
+            display: flex;
+            align-items: center;
+            background: rgba(255,255,255,0.06);
+            border-radius: 30px;
+            padding: 5px 6px 5px 16px;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+        .header-search input {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #e3d9f2;
+            font-size: 0.85rem;
+            width: 130px;
+        }
+        .header-search button {
+            background: linear-gradient(135deg, #ff7ac6, #9a5fce);
+            border: none;
+            color: #fff;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+        .header-search button:hover {
+            opacity: 0.85;
+        }
+        /* ---- 首屏 Hero ---- */
+        .hero {
+            position: relative;
+            padding: 80px 0 90px;
+            background: 
+                radial-gradient(circle at 15% 30%, rgba(255,122,198,0.15) 0%, transparent 45%),
+                radial-gradient(circle at 85% 70%, rgba(108,62,159,0.25) 0%, transparent 40%),
+                #0d0a14;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 300px;
+            background: radial-gradient(ellipse, rgba(255,122,198,0.06), transparent 70%);
+            pointer-events: none;
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: center;
+        }
+        .hero h1 {
+            font-size: 2.6rem;
+            line-height: 1.25;
+            margin-bottom: 18px;
+            font-weight: 800;
+            background: linear-gradient(120deg, #f0c9e4, #d9a8f0, #ffb3e6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero h1 .highlight {
+            background: linear-gradient(120deg, #ff7ac6, #ffb3e6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-desc {
+            font-size: 1.05rem;
+            color: #b8a5d0;
+            margin-bottom: 24px;
+            max-width: 600px;
+        }
+        .hero-desc strong {
+            color: #e8c5f0;
+        }
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        .hero-badge {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #cbb8e0;
+        }
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #ff7ac6 0%, #8b5fcf 100%);
+            color: #fff;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 600;
+            box-shadow: 0 4px 24px rgba(255,122,198,0.25);
+            transition: box-shadow 0.3s, transform 0.2s;
+        }
+        .btn-primary:hover {
+            box-shadow: 0 6px 32px rgba(255,122,198,0.4);
+            transform: translateY(-2px);
+            color: #fff;
+        }
+        .btn-outline {
+            border: 1px solid rgba(255,255,255,0.3);
+            color: #dccff0;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 500;
+            transition: background 0.3s, border 0.3s;
+        }
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.06);
+            border-color: #ff9de2;
+            color: #ffc9e8;
+        }
+        .hero-art {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .hero-art-placeholder {
+            width: 280px;
+            height: 340px;
+            background: linear-gradient(145deg, #241530, #1b1020);
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+        }
+        .hero-art-placeholder::before {
+            content: '✦';
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 80px;
+            color: rgba(255,122,198,0.25);
+            text-shadow: 0 0 40px rgba(255,122,198,0.5);
+        }
+        .hero-art-placeholder::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60%;
+            background: linear-gradient(to top, rgba(255,122,198,0.15), transparent);
+        }
+        .art-caption {
+            position: absolute;
+            bottom: 16px;
+            left: 20px;
+            color: #c9a6e8;
+            font-size: 0.85rem;
+            background: rgba(0,0,0,0.3);
+            padding: 4px 12px;
+            border-radius: 14px;
+            backdrop-filter: blur(4px);
+        }
+        /* ---- 栏目标题 ---- */
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 28px;
+            position: relative;
+            padding-left: 18px;
+            text-align: left;
+        }
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            bottom: 8px;
+            width: 4px;
+            background: linear-gradient(180deg, #ff7ac6, #7a4fae);
+            border-radius: 4px;
+        }
+        .section-sub {
+            color: #8f7ba8;
+            font-size: 0.9rem;
+            margin-top: -18px;
+            margin-bottom: 24px;
+            padding-left: 18px;
+        }
+        /* ---- 作品介绍 ---- */
+        .intro-section {
+            padding: 60px 0;
+            background: #0f0c16;
+        }
+        .intro-flex {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .intro-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 16px;
+            padding: 24px;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+        .intro-card:hover {
+            border-color: rgba(255,122,198,0.3);
+            transform: translateY(-4px);
+        }
+        .intro-card h3 {
+            color: #d9b8e8;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .intro-card p {
+            color: #a392b8;
+            font-size: 0.92rem;
+        }
+        /* ---- 角色图鉴 ---- */
+        .characters-section {
+            padding: 60px 0;
+            background: #0d0a14;
+        }
+        .characters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+        }
+        .character-card {
+            background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .character-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 36px rgba(0,0,0,0.5);
+            border-color: rgba(255,122,198,0.25);
+        }
+        .character-avatar {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 72px;
+            background: radial-gradient(circle at 50% 60%, #2a1b35, #150d1c);
+            color: rgba(255,255,255,0.15);
+            position: relative;
+        }
+        .character-avatar span {
+            filter: drop-shadow(0 0 10px rgba(255,122,198,0.3));
+        }
+        .character-info {
+            padding: 18px;
+        }
+        .character-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+            color: #e0c8ee;
+        }
+        .character-tag {
+            font-size: 0.8rem;
+            color: #9a7bb5;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .character-info p {
+            font-size: 0.85rem;
+            color: #9f8fb2;
+        }
+        .character-role {
+            display: inline-block;
+            background: rgba(255,122,198,0.15);
+            border: 1px solid rgba(255,122,198,0.2);
+            padding: 2px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            color: #f0b0dc;
+            margin-bottom: 10px;
+        }
+        /* ---- 世界观 ---- */
+        .lore-section {
+            padding: 60px 0;
+            background: #0f0c16;
+        }
+        .lore-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+        .lore-card {
+            background: rgba(255,255,255,0.03);
+            border-radius: 16px;
+            padding: 28px;
+            border-left: 3px solid #ff7ac6;
+        }
+        .lore-card h3 {
+            color: #dfc0ec;
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+        }
+        .lore-card p {
+            color: #a392b8;
+            font-size: 0.92rem;
+        }
+        .lore-card ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 12px;
+        }
+        .lore-card li {
+            color: #b8a5d0;
+            font-size: 0.9rem;
+            padding: 4px 0;
+            padding-left: 18px;
+            position: relative;
+        }
+        .lore-card li::before {
+            content: '◆';
+            position: absolute;
+            left: 0;
+            color: #ff7ac6;
+            font-size: 0.7rem;
+            top: 8px;
+        }
+        /* ---- 同人创作 ---- */
+        .fanwork-section {
+            padding: 60px 0;
+            background: #0d0a14;
+        }
+        .fanwork-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+        .fanwork-card {
+            border-radius: 14px;
+            padding: 20px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.04);
+        }
+        .fanwork-card .category {
+            font-size: 0.75rem;
+            color: #ff9de2;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .fanwork-card h3 {
+            font-size: 1rem;
+            margin: 8px 0;
+            color: #d9b8e8;
+        }
+        .fanwork-card p {
+            font-size: 0.85rem;
+            color: #9f8fb2;
+        }
+        .fanwork-meta {
+            display: flex;
+            gap: 12px;
+            margin-top: 12px;
+            font-size: 0.75rem;
+            color: #7a6a8c;
+        }
+        /* ---- FAQ ---- */
+        .faq-section {
+            padding: 60px 0;
+            background: #0f0c16;
+        }
+        .faq-list {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            padding: 18px 0;
+        }
+        .faq-item summary {
+            cursor: pointer;
+            font-size: 1rem;
+            color: #d9b8e8;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+        }
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+        .faq-item summary::after {
+            content: '+';
+            font-size: 1.4rem;
+            color: #ff7ac6;
+            transition: transform 0.3s;
+        }
+        .faq-item[open] summary::after {
+            transform: rotate(45deg);
+        }
+        .faq-item p {
+            color: #a392b8;
+            font-size: 0.92rem;
+            margin-top: 12px;
+            padding-right: 30px;
+        }
+        /* ---- 页脚 ---- */
+        .site-footer {
+            background: #0a0710;
+            padding: 40px 0 20px;
+            border-top: 1px solid rgba(255,255,255,0.04);
+        }
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .footer-col h4 {
+            color: #c9a6e8;
+            font-size: 0.95rem;
+            margin-bottom: 14px;
+        }
+        .footer-col ul {
+            list-style: none;
+        }
+        .footer-col li {
+            margin-bottom: 8px;
+        }
+        .footer-col a {
+            font-size: 0.85rem;
+            color: #8f7ba8;
+        }
+        .footer-col a:hover {
+            color: #ff9de2;
+        }
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.04);
+            color: #5f5170;
+            font-size: 0.8rem;
+        }
+        /* ---- 响应式 ---- */
+        @media (max-width: 900px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-desc {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .hero-badges,
+            .hero-actions {
+                justify-content: center;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .header-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+            .main-nav ul {
+                justify-content: center;
+            }
+            .header-search {
+                width: 100%;
+                justify-content: center;
+            }
+            .header-search input {
+                flex: 1;
+                max-width: 300px;
+            }
+            .section-title {
+                font-size: 1.4rem;
+            }
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 0 16px;
+            }
+            .hero {
+                padding: 50px 0;
+            }
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+            .hero-art-placeholder {
+                width: 220px;
+                height: 280px;
+            }
+            .characters-grid {
+                grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            }
+            .character-avatar {
+                font-size: 50px;
+                height: 150px;
+            }
+            .main-nav ul {
+                gap: 14px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+    <!-- 页眉 -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo-area">
+                <div class="logo-icon">⚔️</div>
+                <div class="logo-text">魔界天使<small>幻想资料库</small></div>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">作品</a></li>
+                    <li><a href="#">角色</a></li>
+                    <li><a href="#">世界观</a></li>
+                    <li><a href="#">同人</a></li>
+                </ul>
+            </nav>
+            <div class="header-search">
+                <input type="text" placeholder="搜索角色或作品">
+                <button>搜索</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 首屏 Hero -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div>
+                <h1>探索<span class="highlight">魔界天使</span>的暗黑幻想世界</h1>
+                <p class="hero-desc">
+                    <strong>魔界天使</strong>是近年来暗黑幻想题材中独具魅力的创作主题，它打破传统天使与恶魔的二元对立，描绘了在混沌边境挣扎、抉择与救赎的存在。本站围绕这一母题，汇集作品、角色、设定与创作灵感。
+                </p>
+                <div class="hero-badges">
+                    <span class="hero-badge">✦ 堕落与重生</span>
+                    <span class="hero-badge">✦ 神魔交织</span>
+                    <span class="hero-badge">✦ 多叙事线</span>
+                    <span class="hero-badge">✦ 视觉系美学</span>
+                </div>
+                <div class="hero-actions">
+                    <a href="#" class="btn-primary">进入魔界图鉴</a>
+                    <a href="#" class="btn-outline">了解世界观 →</a>
+                </div>
+            </div>
+            <div class="hero-art">
+                <div class="hero-art-placeholder">
+                    <div class="art-caption">魔界天使 · 概念视觉</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 作品介绍 -->
+    <section class="intro-section">
+        <div class="container">
+            <h2 class="section-title">什么是魔界天使？</h2>
+            <p class="section-sub">从概念到叙事，理解这一主题的核心魅力</p>
+            <div class="intro-flex">
+                <div class="intro-card">
+                    <h3>🌑 起源与背景</h3>
+                    <p>魔界天使的设定通常围绕高阶天使因某种原因坠入魔界展开，在神性与魔性的夹缝中寻找自我。不同作品对起源的解释各异，但核心是“秩序与混沌的碰撞”。</p>
+                </div>
+                <div class="intro-card">
+                    <h3>⚡ 角色冲突</h3>
+                    <p>这类故事最动人的部分在于角色内心挣扎：保留天使的慈悲，还是拥抱魔界的力量？许多作品还加入了人间势力、异种族等多方博弈，使剧情更加复杂。</p>
+                </div>
+                <div class="intro-card">
+                    <h3>🎨 视觉风格</h3>
+                    <p>暗色基调与荧光色调对立，羽翼与锁链、圣光与业火交织。这种视觉张力让魔界天使在插画、游戏美术和影视概念设计中都成为极受欢迎的主题。</p>
+                </div>
+                <div class="intro-card">
+                    <h3>📖 叙事可能</h3>
+                    <p>从个人救赎到世界存亡，从史诗战争到日常物语，魔界天使的框架可以容纳多种类型故事。这也是它频频出现在漫画、游戏和网络文学中的原因。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 角色图鉴 -->
+    <section class="characters-section">
+        <div class="container">
+            <h2 class="section-title">经典角色原型</h2>
+            <p class="section-sub">魔界天使题材中反复出现的几种角色类型</p>
+            <div class="characters-grid">
+                <div class="character-card">
+                    <div class="character-avatar"><span>🪽</span></div>
+                    <div class="character-info">
+                        <span class="character-role">核心主角</span>
+                        <h3>堕天者</h3>
+                        <span class="character-tag">由圣入魔 · 矛盾体</span>
+                        <p>原为高阶天使，因质疑天界教条或遭受背叛而坠入魔界，拥有双重力量却时常被记忆所困。</p>
+                    </div>
+                </div>
+                <div class="character-card">
+                    <div class="character-avatar"><span>👁️</span></div>
+                    <div class="character-info">
+                        <span class="character-role">引导者</span>
+                        <h3>魔界守望者</h3>
+                        <span class="character-tag">亦敌亦友 · 智慧型</span>
+                        <p>在魔界生活已久的原住民或前辈，表面冷漠却暗中帮助主角适应环境，知晓许多古老秘密。</p>
+                    </div>
+                </div>
+                <div class="character-card">
+                    <div class="character-avatar"><span>⚖️</span></div>
+                    <div class="character-info">
+                        <span class="character-role">敌对势力</span>
+                        <h3>天界审判官</h3>
+                        <span class="character-tag">极端秩序 · 信念冲突</span>
+                        <p>追捕堕天者的天界武力，坚信清除一切“不洁”存在才能维持宇宙平衡，与主角理念激烈碰撞。</p>
+                    </div>
+                </div>
+                <div class="character-card">
+                    <div class="character-avatar"><span>🌿</span></div>
+                    <div class="character-info">
+                        <span class="character-role">第三方</span>
+                        <h3>边境混血种</h3>
+                        <span class="character-tag">生存者 · 灰色地带</span>
+                        <p>神魔混血或生活在边境的族群，不被任何一方接纳，却往往掌握着改变格局的关键信息。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 世界观 -->
+    <section class="lore-section">
+        <div class="container">
+            <h2 class="section-title">世界观框架</h2>
+            <p class="section-sub">不同作品中魔界天使世界的常见设定</p>
+            <div class="lore-grid">
+                <div class="lore-card">
+                    <h3>天界与魔界的双生结构</h3>
+                    <p>在多数设定中，天界与魔界并非完全对立，而是同一本源力量的两面。天使与恶魔的差异更多来自规则不同，而非本质善恶。</p>
+                    <ul>
+                        <li>光之法则与混沌法则并行</li>
+                        <li>两界之间存在“裂隙地带”</li>
+                        <li>跨界行为通常被严格禁止</li>
+                    </ul>
+                </div>
+                <div class="lore-card">
+                    <h3>力量体系的象征性</h3>
+                    <p>魔界天使的力量往往与情感、记忆、信念等抽象概念绑定，而非简单元素或物理攻击。这使得战斗场面常带有哲学意味。</p>
+                    <ul>
+                        <li>羽翼数量代表位阶</li>
+                        <li>魔纹与圣痕的冲突</li>
+                        <li>力量觉醒需付出代价</li>
+                    </ul>
+                </div>
+                <div class="lore-card">
+                    <h3>群体与阵营</h3>
+                    <p>除了神魔两界，还存在人间势力、虚空生物、古老种族等第三方，各方在不同作品中扮演不同角色，共同构成复杂的政治图谱。</p>
+                    <ul>
+                        <li>主战派与温和派的分歧</li>
+                        <li>隐藏于幕后的古老议会</li>
+                        <li>下层魔界的混乱地带</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 同人创作 -->
+    <section class="fanwork-section">
+        <div class="container">
+            <h2 class="section-title">同人创作与衍生</h2>
+            <p class="section-sub">创作者们如何延伸魔界天使的故事</p>
+            <div class="fanwork-grid">
+                <div class="fanwork-card">
+                    <span class="category">短篇小说</span>
+                    <h3>《羽翼坠落之后》</h3>
+                    <p>讲述堕天者初到魔界一百天内的经历，侧重于心理描写和环境适应，展现魔界并非全然混沌。</p>
+                    <div class="fanwork-meta">
+                        <span>作者：佚名</span>
+                        <span>字数：1.2万</span>
+                    </div>
+                </div>
+                <div class="fanwork-card">
+                    <span class="category">插画集</span>
+                    <h3>《双界之镜》</h3>
+                    <p>收录50余幅魔界天使主题插画，通过镜像构图展现同一角色在天界与魔界的两种姿态。</p>
+                    <div class="fanwork-meta">
+                        <span>创作：多人协作</span>
+                        <span>风格：厚涂</span>
+                    </div>
+                </div>
+                <div class="fanwork-card">
+                    <span class="category">游戏MOD</span>
+                    <h3>魔界天使复兴计划</h3>
+                    <p>为热门奇幻游戏制作的大型剧情MOD，新增魔界天使职业线、专属技能树与结局分支。</p>
+                    <div class="fanwork-meta">
+                        <span>版本：0.9.2</span>
+                        <span>更新：持续</span>
+                    </div>
+                </div>
+                <div class="fanwork-card">
+                    <span class="category">设定考据</span>
+                    <h3>魔界天使原型溯源</h3>
+                    <p>从神话学角度梳理天使坠落叙事的历史演变，分析不同文化中“堕落天使”形象的异同。</p>
+                    <div class="fanwork-meta">
+                        <span>类型：研究笔记</span>
+                        <span>篇幅：长文</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">常见问题</h2>
+            <p class="section-sub">关于魔界天使主题的一些基础解答</p>
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary>魔界天使是一个固定作品吗？</summary>
+                    <p>不是。魔界天使更多是一种创作题材或概念组合，在不同漫画、游戏、小说中都有出现。每个作品的世界观和角色设定都可能有很大差异。</p>
+                </details>
+                <details class="faq-item">
+                    <summary>这类故事的核心看点是什么？</summary>
+                    <p>通常集中在身份认同、道德困境与力量与责任的冲突上。天使与恶魔的二元属性让角色天然具有内在矛盾，容易产生深度叙事。</p>
+                </details>
+                <details class="faq-item">
+                    <summary>魔界天使与堕落天使的区别？</summary>
+                    <p>堕落天使通常指从神界坠落的个体，而魔界天使作为一种题材，更强调主角在魔界中重新定位自我，甚至可能发展出独特的“魔界天使”身份，而非单纯沉沦。</p>
+                </details>
+                <details class="faq-item">
+                    <summary>想创作魔界天使主题作品，如何开始？</summary>
+                    <p>可以先明确你的“天使”与“魔界”各自代表什么价值观，再设计主角在这两者之间的独特位置。尽量避免非黑即白的阵营划分，给角色留出挣扎与成长的空间。</p>
+                </details>
+                <details class="faq-item">
+                    <summary>有哪些推荐的入门作品？</summary>
+                    <p>可以搜索标签“暗黑幻想”“天使恶魔”“神魔大战”等，不同平台都有相关连载与单行本。建议先看画风与简介是否合口味，再深入了解。</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-col">
+                    <h4>内容导航</h4>
+                    <ul>
+                        <li><a href="#">作品列表</a></li>
+                        <li><a href="#">角色百科</a></li>
+                        <li><a href="#">世界观设定</a></li>
+                        <li><a href="#">同人专区</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>创作支持</h4>
+                    <ul>
+                        <li><a href="#">投稿指南</a></li>
+                        <li><a href="#">素材包下载</a></li>
+                        <li><a href="#">灵感工坊</a></li>
+                        <li><a href="#">讨论社区</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关于本站</h4>
+                    <ul>
+                        <li><a href="#">项目介绍</a></li>
+                        <li><a href="#">免责声明</a></li>
+                        <li><a href="#">联系方式</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2024 魔界天使幻想资料库 · 本网站为概念展示站，所有内容均为虚构与爱好者创作分享
+            </div>
+        </div>
+    </footer>
+</body>
+                  </html>
